@@ -1,6 +1,6 @@
-package ru.eventflow.ui.event;
+package ru.eventflow.sample.ui.event;
 
-import ru.eventflow.eventbus.Event;
+import ru.eventflow.sample.eventbus.Event;
 
 public class StatusUpdateEvent extends Event<StatusUpdateEventHandler> {
 

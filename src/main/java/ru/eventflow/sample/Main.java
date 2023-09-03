@@ -1,4 +1,4 @@
-package ru.eventflow;
+package ru.eventflow.sample;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -6,16 +6,16 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ru.eventflow.ui.presenter.MainController;
+import ru.eventflow.sample.ui.presenter.MainPresenter;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Injector injector = Guice.createInjector(new GUIModule());
-        MainController mainController = injector.getInstance(MainController.class);
+        MainPresenter mainPresenter = injector.getInstance(MainPresenter.class);
 
-        Parent parent = mainController.getRootPane();
+        Parent parent = mainPresenter.getRootPane();
         primaryStage.setScene(new Scene(parent));
         primaryStage.setTitle("JavaFX 8 Dependency injection");
         primaryStage.show();

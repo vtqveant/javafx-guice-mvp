@@ -1,11 +1,11 @@
-package ru.eventflow;
+package ru.eventflow.sample;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import com.google.inject.name.Names;
-import ru.eventflow.eventbus.EventBus;
-import ru.eventflow.ui.presenter.MainController;
-import ru.eventflow.ui.presenter.TopPaneController;
+import ru.eventflow.sample.eventbus.EventBus;
+import ru.eventflow.sample.ui.presenter.MainPresenter;
+import ru.eventflow.sample.ui.presenter.TopPanePresenter;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -16,8 +16,8 @@ public class GUIModule extends AbstractModule {
     protected void configure() {
         Names.bindProperties(binder(), getProperties());
         bind(EventBus.class).in(Singleton.class);
-        bind(MainController.class).in(Singleton.class);
-        bind(TopPaneController.class).in(Singleton.class);
+        bind(MainPresenter.class).in(Singleton.class);
+        bind(TopPanePresenter.class).in(Singleton.class);
     }
 
     private Properties getProperties() {

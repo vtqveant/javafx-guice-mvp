@@ -1,17 +1,17 @@
-package ru.eventflow.ui.presenter;
+package ru.eventflow.sample.ui.presenter;
 
 import com.google.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import ru.eventflow.eventbus.EventBus;
-import ru.eventflow.ui.event.StatusUpdateEvent;
+import ru.eventflow.sample.eventbus.EventBus;
+import ru.eventflow.sample.ui.event.StatusUpdateEvent;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class TopPaneController {
+public class TopPanePresenter {
 
     private EventBus eventBus;
 
@@ -24,7 +24,7 @@ public class TopPaneController {
     private int counter = 0;
 
     @Inject
-    public TopPaneController(EventBus eventBus) {
+    public TopPanePresenter(EventBus eventBus) {
         try (InputStream in = getClass().getResourceAsStream("/fxml/TopPaneView.fxml")) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setController(this);

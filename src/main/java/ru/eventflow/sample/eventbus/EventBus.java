@@ -1,4 +1,4 @@
-package ru.eventflow.eventbus;
+package ru.eventflow.sample.eventbus;
 
 public class EventBus extends HandlerManager {
     public EventBus() {

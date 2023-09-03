@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: ru.eventflow.Main
+Main-Class: ru.eventflow.sample.Main

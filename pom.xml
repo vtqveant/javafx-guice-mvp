@@ -8,7 +8,6 @@
     <packaging>jar</packaging>
 
     <name>javafx-guice-mvp</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,18 +57,6 @@
 
     <build>
         <plugins>
-            <!--            <plugin>-->
-            <!--                <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                <artifactId>maven-jar-plugin</artifactId>-->
-            <!--                <version>3.2.2</version>-->
-            <!--                <configuration>-->
-            <!--                    <archive>-->
-            <!--                        <manifest>-->
-            <!--                            <mainClass>ru.koreanika.utils.Main</mainClass>-->
-            <!--                        </manifest>-->
-            <!--                    </archive>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -85,9 +72,9 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <jlinkImageName>koreanikaDesignerRuntime</jlinkImageName>
+                    <jlinkImageName>sampleApplication</jlinkImageName>
                     <launcher>launcher</launcher>
-                    <mainClass>ru.eventflow.Main</mainClass>
+                    <mainClass>ru.eventflow.sample.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>

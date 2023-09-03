@@ -1,18 +1,19 @@
-package ru.eventflow.ui.presenter;
+package ru.eventflow.sample.ui.presenter;
 
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import ru.eventflow.eventbus.EventBus;
-import ru.eventflow.ui.event.StatusUpdateEvent;
-import ru.eventflow.ui.event.StatusUpdateEventHandler;
+import ru.eventflow.sample.eventbus.EventBus;
+import ru.eventflow.sample.ui.event.StatusUpdateEvent;
+import ru.eventflow.sample.ui.event.StatusUpdateEventHandler;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainController implements StatusUpdateEventHandler {
+public class MainPresenter implements StatusUpdateEventHandler {
 
     private EventBus eventBus;
 
@@ -29,7 +30,7 @@ public class MainController implements StatusUpdateEventHandler {
     private Text bottomText;
 
     @Inject
-    public MainController(EventBus eventBus, TopPaneController topPaneController) {
+    public MainPresenter(EventBus eventBus, TopPanePresenter topPanePresenter, @Named("initial_text") String key) {
         try (InputStream in = getClass().getResourceAsStream("/fxml/MainView.fxml")) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setController(this);
@@ -41,12 +42,14 @@ public class MainController implements StatusUpdateEventHandler {
         this.eventBus = eventBus;
         this.eventBus.addHandler(StatusUpdateEvent.TYPE, this);
 
-        topPane.getChildren().add(topPaneController.getParent());
+        bottomText.setText(key);
+
+        topPane.getChildren().add(topPanePresenter.getParent());
     }
 
     @Override
     public void onEvent(StatusUpdateEvent e) {
-        this.bottomText.setText(e.getMessage());
+        bottomText.setText(e.getMessage());
     }
 
     public AnchorPane getRootPane() {

@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package ru.eventflow.eventbus;
+package ru.eventflow.sample.eventbus;
 
 /**
  * Registration returned from a call to

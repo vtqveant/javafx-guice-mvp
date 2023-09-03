@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package ru.eventflow.eventbus;
+package ru.eventflow.sample.eventbus;
 
 import java.util.ArrayList;
 import java.util.HashMap;

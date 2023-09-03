@@ -1,4 +1,4 @@
-package ru.eventflow;
+package ru.eventflow.sample;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
