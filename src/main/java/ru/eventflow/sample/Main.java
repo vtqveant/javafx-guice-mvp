@@ -17,7 +17,7 @@ public class Main extends Application {
 
         Parent parent = mainPresenter.getParent();
         primaryStage.setScene(new Scene(parent));
-        primaryStage.setTitle("JavaFX 8 Dependency injection");
+        primaryStage.setTitle("JavaFX 20 Dependency Injection");
         primaryStage.show();
     }
 
