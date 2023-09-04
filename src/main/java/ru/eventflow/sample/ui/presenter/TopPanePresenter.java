@@ -11,7 +11,7 @@ import ru.eventflow.sample.ui.event.StatusUpdateEvent;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class TopPanePresenter {
+public class TopPanePresenter implements Presenter {
 
     private EventBus eventBus;
 
@@ -36,11 +36,12 @@ public class TopPanePresenter {
         this.eventBus = eventBus;
 
         this.topPaneButton.setOnMouseClicked(mouseEvent -> {
-            this.eventBus.fireEvent(new StatusUpdateEvent("Button was clicked " + counter + " times!"));
             counter++;
+            this.eventBus.fireEvent(new StatusUpdateEvent("Button was clicked " + counter + " times!"));
         });
     }
 
+    @Override
     public Parent getParent() {
         return topPaneViewParent;
     }

@@ -13,7 +13,7 @@ import ru.eventflow.sample.ui.event.StatusUpdateEventHandler;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainPresenter implements StatusUpdateEventHandler {
+public class MainPresenter implements Presenter, StatusUpdateEventHandler {
 
     private EventBus eventBus;
 
@@ -52,7 +52,8 @@ public class MainPresenter implements StatusUpdateEventHandler {
         bottomText.setText(e.getMessage());
     }
 
-    public AnchorPane getRootPane() {
+    @Override
+    public AnchorPane getParent() {
         return rootPane;
     }
 
