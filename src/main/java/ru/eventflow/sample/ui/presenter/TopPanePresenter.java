@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import ru.eventflow.sample.eventbus.EventBus;
 import ru.eventflow.sample.ui.event.StatusUpdateEvent;
 
@@ -21,10 +22,13 @@ public class TopPanePresenter implements Presenter {
     @FXML
     private Button topPaneButton;
 
+    @FXML
+    private AnchorPane leftAnchorPane;
+
     private int counter = 0;
 
     @Inject
-    public TopPanePresenter(EventBus eventBus) {
+    public TopPanePresenter(EventBus eventBus, SelectPresenter selectPresenter) {
         try (InputStream in = getClass().getResourceAsStream("/fxml/TopPaneView.fxml")) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setController(this);
@@ -39,6 +43,8 @@ public class TopPanePresenter implements Presenter {
             counter++;
             this.eventBus.fireEvent(new StatusUpdateEvent("Button was clicked " + counter + " times!"));
         });
+
+        this.leftAnchorPane.getChildren().add(selectPresenter.getParent());
     }
 
     @Override

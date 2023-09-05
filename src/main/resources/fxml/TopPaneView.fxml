@@ -5,6 +5,7 @@
 
 <AnchorPane fx:id="topPaneViewParent" prefHeight="249.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="topPaneButton" layoutX="223.0" layoutY="102.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="155.0" text="Click me!" />
+      <Button fx:id="topPaneButton" layoutX="360.0" layoutY="102.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="155.0" text="Click me!" />
+      <AnchorPane fx:id="leftAnchorPane" layoutX="32.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

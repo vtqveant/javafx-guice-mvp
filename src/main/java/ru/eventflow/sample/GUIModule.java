@@ -5,6 +5,7 @@ import com.google.inject.Singleton;
 import com.google.inject.name.Names;
 import ru.eventflow.sample.eventbus.EventBus;
 import ru.eventflow.sample.ui.presenter.MainPresenter;
+import ru.eventflow.sample.ui.presenter.SelectPresenter;
 import ru.eventflow.sample.ui.presenter.TopPanePresenter;
 
 import java.io.IOException;
@@ -17,6 +18,7 @@ public class GUIModule extends AbstractModule {
         Names.bindProperties(binder(), getProperties());
         bind(EventBus.class).in(Singleton.class);
         bind(MainPresenter.class).in(Singleton.class);
+        bind(SelectPresenter.class).in(Singleton.class);
         bind(TopPanePresenter.class).in(Singleton.class);
     }
 
