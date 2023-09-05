@@ -54,17 +54,17 @@ public class SelectPresenter implements Presenter, MouseClickedEventHandler {
 
     @Override
     public void onEvent(MouseClickedEvent e) {
-        if (!inHierarchy(e.getSource(), titledPane)) {
+        if (!isDescendant(e.getSource(), titledPane)) {
             titledPane.setExpanded(false);
         }
     }
 
-    private boolean inHierarchy(Node node, Node potentialHierarchyElement) {
-        if (potentialHierarchyElement == null) {
+    private boolean isDescendant(Node node, Node potentialDescendant) {
+        if (potentialDescendant == null) {
             return true;
         }
         while (node != null) {
-            if (node == potentialHierarchyElement) {
+            if (node == potentialDescendant) {
                 return true;
             }
             node = node.getParent();
