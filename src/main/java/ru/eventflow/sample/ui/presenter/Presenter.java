@@ -4,6 +4,6 @@ import javafx.scene.Parent;
 
 public interface Presenter {
 
-    Parent getParent();
+    Parent getRootElement();
 
 }

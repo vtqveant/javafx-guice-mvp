@@ -48,7 +48,7 @@ public class SelectPresenter implements Presenter, MouseClickedEventHandler {
     }
 
     @Override
-    public Parent getParent() {
+    public Parent getRootElement() {
         return titledPane;
     }
 

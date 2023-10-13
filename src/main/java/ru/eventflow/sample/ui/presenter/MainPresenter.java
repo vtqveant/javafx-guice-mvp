@@ -53,7 +53,7 @@ public class MainPresenter implements Presenter, StatusUpdateEventHandler {
 
         bottomText.setText(key);
 
-        topPane.getChildren().add(topPanePresenter.getParent());
+        topPane.getChildren().add(topPanePresenter.getRootElement());
     }
 
     @Override
@@ -62,7 +62,7 @@ public class MainPresenter implements Presenter, StatusUpdateEventHandler {
     }
 
     @Override
-    public AnchorPane getParent() {
+    public AnchorPane getRootElement() {
         return rootPane;
     }
 

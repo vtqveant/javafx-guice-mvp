@@ -28,7 +28,7 @@ public class TopPanePresenter implements Presenter {
     private int counter = 0;
 
     @Inject
-    public TopPanePresenter(EventBus eventBus, SelectPresenter selectPresenter) {
+    public TopPanePresenter(EventBus eventBus, SelectPresenter selectPresenter, SlideShowPresenter slideShowPresenter) {
         try (InputStream in = getClass().getResourceAsStream("/fxml/TopPaneView.fxml")) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setController(this);
@@ -39,16 +39,18 @@ public class TopPanePresenter implements Presenter {
 
         this.eventBus = eventBus;
 
-        this.topPaneButton.setOnMouseClicked(mouseEvent -> {
-            counter++;
-            this.eventBus.fireEvent(new StatusUpdateEvent("Button was clicked " + counter + " times!"));
-        });
+        this.topPaneButton.setVisible(false);
+//        this.topPaneButton.setOnMouseClicked(mouseEvent -> {
+//            counter++;
+//            this.eventBus.fireEvent(new StatusUpdateEvent("Button was clicked " + counter + " times!"));
+//        });
 
-        this.leftAnchorPane.getChildren().add(selectPresenter.getParent());
+//        this.leftAnchorPane.getChildren().add(selectPresenter.getRootElement());
+        this.leftAnchorPane.getChildren().add(slideShowPresenter.getRootElement());
     }
 
     @Override
-    public Parent getParent() {
+    public Parent getRootElement() {
         return topPaneViewParent;
     }
 

@@ -16,7 +16,7 @@ public class Main extends Application {
         Injector injector = Guice.createInjector(new GUIModule());
         MainPresenter mainPresenter = injector.getInstance(MainPresenter.class);
 
-        Parent root = mainPresenter.getParent();
+        Parent root = mainPresenter.getRootElement();
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("JavaFX 20 Dependency Injection");
         primaryStage.show();
